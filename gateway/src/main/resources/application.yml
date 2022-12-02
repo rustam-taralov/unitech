@@ -1,0 +1,41 @@
+eureka:
+  client:
+    serviceUrl:
+      #      defaultZone: ${eureka-url:http://service-discovery:8761}/eureka
+      defaultZone: ${eureka-url:http://localhost:8761}/eureka
+    fetch-registry: true
+    register-with-eureka: true
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: ACCOUNT-USER-MS
+          uri: lb://ACCOUNT-USER-MS
+          predicates:
+            - Path=/auth-user/**
+        - id: ACCOUNT-MS
+          uri: lb://ACCOUNT-MS
+          predicates:
+            - Path=/account-ms/**
+        - id: CURRENCY-RATE-MS
+          uri: lb://CURRENCY-RATE-MS
+          predicates:
+            - Path=/currency-rate/**
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin
+      globalcors:
+        cors-configurations:
+          "[/**]":
+            allowCredentials: false
+            allowedOrigins: "*"
+            allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept, Content-Length, TOKEN, Authorization"
+            allowedMethods: "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+            maxAge: 3628800
+
+

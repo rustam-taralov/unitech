@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    container_name: unitech-db
+    hostname: db
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=unitech
+    ports:
+      - '5432:5432'
+    volumes:
+      - unitech-db:/var/lib/postgresql/unitech
+
+networks:
+  ms_net:
+    driver: bridge
+
+volumes:
+  unitech-db:

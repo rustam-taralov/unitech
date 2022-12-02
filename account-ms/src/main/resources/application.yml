@@ -1,0 +1,23 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${eureka-url:http://localhost:8761}/eureka
+#        defaultZone: ${eureka-url:http://service-discovery:8761}/eureka
+
+
+spring:
+  application:
+    name: account-ms
+  datasource:
+    url: jdbc:postgresql://localhost:5432/unitech
+    username: root
+    password: root
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: true
+
+
+server:
+  port: 8888
+  servlet:
+    context-path: /account-ms
