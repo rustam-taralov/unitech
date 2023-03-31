@@ -25,8 +25,6 @@ public class AuthController {
     private final AuthService authService;
 
     private final UserService userService;
-
-
     @PostMapping("login")
     public ResponseEntity<CommonResponse<LoginResponse>> login(@RequestBody @Valid LoginRequest request) {
         var tokens = authService.loginUser(request);

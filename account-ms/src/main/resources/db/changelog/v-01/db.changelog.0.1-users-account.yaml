@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202304010121
+      author: rustam
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                  name: id
+                  type: bigint
+              - column:
+                  name: pin
+                  type: nvarchar(100)
+              - column:
+                  name: account_number
+                  type: nvarchar(100)
+              - column:
+                  name: status
+                  type: nvarchar(100)
+              - column:
+                  name: currency
+                  type: nvarchar(255)
+              - column:
+                  name: balance
+                  type: decimal
+              - column:
+                  name: created_at
+                  type: datetime
+            tableName: user_accounts

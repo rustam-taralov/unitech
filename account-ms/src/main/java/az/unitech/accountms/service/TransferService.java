@@ -12,14 +12,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 
+import static org.springframework.transaction.annotation.Isolation.REPEATABLE_READ;
+
 @Service
 @RequiredArgsConstructor
 public class TransferService {
 
-    private ExceptionHelper exceptionHelper;
+    private final ExceptionHelper exceptionHelper;
     private final UserAccountService accountService;
 
-    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Transactional(isolation = REPEATABLE_READ)
     public void transferMoney(AccountToAccountRequest accountToAccountRequest){
 
         if(accountToAccountRequest.getAccountTo().equals(accountToAccountRequest.getAccountFrom()))

@@ -26,7 +26,6 @@ public class UserAccountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String pin;
     private String accountNumber;
     private AccountStatus status;

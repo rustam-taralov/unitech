@@ -26,7 +26,7 @@ public class LoggingAspect {
         this.mapper = mapper;
     }
 
-    @Pointcut("@annotation(az.unitech.authuserms.annotations.Logable)")
+    @Pointcut("@annotation(az.unitech.accountms.annotations.Logable)")
     public void pointcut() {
     }
 

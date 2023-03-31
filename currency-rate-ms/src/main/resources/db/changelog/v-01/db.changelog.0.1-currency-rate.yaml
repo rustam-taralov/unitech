@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202304010029
+      author: rustam
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                  name: id
+                  type: bigint
+              - column:
+                  name: from_currency
+                  type: nvarchar(100)
+              - column:
+                  name: to_currency
+                  type: nvarchar(100)
+              - column:
+                  name: range
+                  type: decimal
+            tableName: currency-rate

@@ -9,9 +9,10 @@ services:
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=unitech
     ports:
-      - '5432:5432'
+      - '5433:5432'
     volumes:
       - unitech-db:/var/lib/postgresql/unitech
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
 networks:
   ms_net:

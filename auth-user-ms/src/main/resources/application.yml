@@ -2,18 +2,16 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${eureka-url:http://localhost:8761}/eureka
-#        defaultZone: ${eureka-url:http://service-discovery:8761}/eureka
-
 
 spring:
   application:
     name: auth-user-ms
   datasource:
-    url: jdbc:postgresql://localhost:5432/unitech
+    url: jdbc:postgresql://localhost:5433/unitech
     username: root
     password: root
   jpa:
-    hibernate.ddl-auto: update
+    hibernate.ddl-auto: none
     show-sql: true
 
 
@@ -22,6 +20,11 @@ server:
   servlet:
     context-path: /auth-user
 
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: api-docs
 
 jwt:
   key: fhsuhASfn34GD

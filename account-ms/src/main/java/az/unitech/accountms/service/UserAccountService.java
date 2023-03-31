@@ -19,10 +19,8 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class UserAccountService {
-
     private final UserAccountRepository userAccountRepository;
     private final ExceptionHelper exceptionHelper;
-
     private final AuthService authService;
 
     public List<UserAccountDto> getAllAccountByPin(String pin){

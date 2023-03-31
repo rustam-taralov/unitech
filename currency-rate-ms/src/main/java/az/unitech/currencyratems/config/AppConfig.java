@@ -1,6 +1,6 @@
 package az.unitech.currencyratems.config;
 
-import az.unitech.authuserms.AuthUserMsApplication;
+import az.unitech.currencyratems.CurrencyRateMsApplication;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -21,7 +21,7 @@ public class AppConfig {
 
     @Bean
     public Logger getLogger(){
-        return LoggerFactory.getLogger(AuthUserMsApplication.class);
+        return LoggerFactory.getLogger(CurrencyRateMsApplication.class);
     }
 
     @Bean

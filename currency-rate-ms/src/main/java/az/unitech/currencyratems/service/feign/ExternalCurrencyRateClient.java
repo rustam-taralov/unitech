@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient( url = "https://api.apilayer.com", configuration = FeignConfig.class)
+@FeignClient(name = "currency-rate-client", url = "https://api.apilayer.com", configuration = FeignConfig.class)
 public interface ExternalCurrencyRateClient {
 
     @GetMapping("/fixer/latest")
